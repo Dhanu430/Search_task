@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="searchbox" name="searchbox" placeholder="search...">
+    <ul id="lists">
+        <li>Dhanu</li>
+        <li>cherry</li>
+        <li>Bharath</li>
+        <li>vamsi</li>
+        <li>srinath</li>
+        <li>nagendra</li>
+        <li>swami</li>
+        <li>hemanth</li>
+        <li>Prasad</li>
+        <li>Shyam</li>
+
+    </ul>
+    <script>
+        const input=document.getElementById("searchbox")
+        const lists=document.querySelectorAll("#lists li")
+        console.log(lists)
+        input.addEventListener("input",(e)=>{
+            const searchvalue=e.target.value.toLowerCase()
+            console.log(searchvalue)
+            lists.forEach((litags)=>{
+                console.log()
+                if(litags.textContent.toLowerCase().includes(searchvalue)){
+                    litags.style.display="block"
+                }
+                else{
+                    litags.style.display="none"
+                }
+            })
+        })
+    </script>
+</body>
+</html>
